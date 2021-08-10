@@ -1,0 +1,138 @@
+---
+title: "Making and Indexing data in R"
+author: "Charles Hendrickson"
+date: "8/10/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(palmerpenguins)
+library(tidyverse)
+
+```
+
+## Make some vectors and check them out.
+
+```{r}
+bassets <- c("zennie", "magoo", TRUE, 4, "arthur")
+
+# Check the class
+class(bassets)
+
+# Always is put under "character" in the class type
+
+```
+
+```{r}
+basset_age <- c("deceased", 6, 5)
+class(basset_age)
+typeof(basset_age)
+
+
+basset_magoo <- c(4L, 5L, 6L)
+class(basset_magoo)
+typeof(basset_magoo)
+
+
+is.character(basset_magoo)
+is.character(bassets)
+
+
+
+```
+
+```{r}
+basset_food <- c(magoo = "chicken",
+              arthur = "paper",
+              zennie = "steak")
+
+basset_food
+class(basset_food)
+
+basset_food[2]
+basset_food["arthur"]
+
+magoo_food <- basset_food[1]
+basset_food["magoo"]
+
+
+
+```
+
+```{r}
+bass <- c("calico", "small_mouth", "large_mouth", "spotted_bay", "sand")
+
+bass[1:3]
+
+i <- 3
+bass[i]
+
+i <- c(1, 3, 5)
+
+bass[i]
+
+
+bass[3] <- "DELICIOUS"
+
+
+
+```
+
+
+## Lists in R have elements that have different classes 
+
+```{r}
+urchins <- list("blue", 
+                c(1, 2, 3), 
+                seq(from = 0, to = 50, by = 0.5),
+                1200L)
+urchins
+
+urchins[[1]]
+urchins[1]
+
+```
+
+```{r}
+surfboard <- list(fins = c("single", "twin", "thruster", "quad"),
+                  tail = c("squash", "round", "swallow"),
+                  price = c(750, 550, 250))
+
+surfboard 
+
+surfboard_price <- surfboard[[3]]
+surfboard_price
+
+
+```
+
+
+
+
+
+## Data frames practice 
+```{r}
+fruit <- data.frame(type = c("apple", "banana", "peach"),
+                    mass = c(130, 200, 110))
+
+fruit
+
+class(fruit)
+
+class(fruit$mass)
+
+fruit$type
+
+fruit[, 1]
+
+
+```
+
+
+
+
+
+
+
